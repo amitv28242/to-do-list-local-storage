@@ -1,0 +1,31 @@
+Sorting:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+var numbers = [40, 4, 50, 5, 45, 51];
+numbers.sort(function(a, b) {
+    return a - b;
+});
+console.log(numbers);
+
+
+http://stackoverflow.com/questions/10123953/sort-javascript-object-array-by-date
+This works, changing string to a real date an evaluating it (date is a property of each object in myArray):
+
+myArray.sort(function(a, b) {
+    return new Date(a.date) - new Date(b.date);
+});
+
+
+Splice:
+newDeck.splice(num, 1);
+Removes the item with index number "num" from the array newDeck, i.e. newDeck[num] is removed. The "1" limits the removal to a single item.
+After this, the indexes of course change down from right to left, so I must go from the right-hand side, i.e. larger indexes down to smaller ones.
+
+indexes.pop();
+Removes last item (rightmost item) from the array indexes
+
+THIS WORKS:
+while (indexes.length > 0) {
+    var i = indexes.pop();
+    myArray.splice(i, 1);
+}
